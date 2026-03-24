@@ -259,7 +259,7 @@ async def entrypoint(ctx: agents.JobContext):
         llm=openai.LLM(model="gpt-4o-mini"),
         tts=openai.TTS(model="tts-1", voice="alloy"),
         vad=silero.VAD.load(),
-        tools=tools.all_tools,
+        tools=tools.flatten(),
         userdata=IVRState(),
         # ivr_detection=True,  # Uncomment to auto-detect upstream IVR systems
     )
